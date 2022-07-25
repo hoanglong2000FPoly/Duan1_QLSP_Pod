@@ -4,7 +4,7 @@
  */
 package Repositories;
 
-import DomainModels.NhanVien;
+import DomainModels.KhachHang;
 import Ultilities.HibernateUti;
 import java.util.List;
 import javax.persistence.TypedQuery;
@@ -14,13 +14,13 @@ import org.hibernate.Session;
  *
  * @author admin
  */
-public class NhanVienDAO {
-    public List<NhanVien> getList(){
-        List<NhanVien> nhanViens;
+public class KhachHangDAO {
+     public List<KhachHang> getList(){
+        List<KhachHang> khachHangs;
         try(Session session = HibernateUti.getSessionFactory().openSession()){
-            TypedQuery<NhanVien> query = session.createQuery("select c from NhanVien c");
-            nhanViens = query.getResultList();
+            TypedQuery<KhachHang> query = session.createQuery("select c from KhachHang c");
+            khachHangs = query.getResultList();
         }
-        return nhanViens;
+        return khachHangs;
     } 
 }

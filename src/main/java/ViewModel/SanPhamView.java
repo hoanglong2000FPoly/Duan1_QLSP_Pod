@@ -2,26 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DomainModels;
+package ViewModel;
 
-import java.io.Serializable;
+import DomainModels.TheLoai;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /**
  *
  * @author admin
  */
-@Entity
-@Table(name = "SanPham")
-public class SanPham implements Serializable {
+public class SanPhamView {
 
-    @Id
     private String MaSanPham;
     private String TenSanPham;
     private int SoLuong;
@@ -33,14 +24,12 @@ public class SanPham implements Serializable {
     private String CongSuat;
     private String Pin;
     private String MoTa;
-    @ManyToOne
-    @JoinColumn(name = "MaTheLoai")
-    private TheLoai MaTheLoai;
+    private TheLoai MatheLoai;
     private int TrangThai;
-    public SanPham() {
+    public SanPhamView() {
     }
 
-    public SanPham(String MaSanPham, String TenSanPham, int SoLuong, Date NamSanXuat, String HangSanXuat, float GiaNhap, float GiaBan, float DungTich, String CongSuat, String Pin, String MoTa, TheLoai MaTheLoai, int TrangThai) {
+    public SanPhamView(String MaSanPham, String TenSanPham, int SoLuong, Date NamSanXuat, String HangSanXuat, float GiaNhap, float GiaBan, float DungTich, String CongSuat, String Pin, String MoTa, TheLoai MatheLoai, int TrangThai) {
         this.MaSanPham = MaSanPham;
         this.TenSanPham = TenSanPham;
         this.SoLuong = SoLuong;
@@ -52,7 +41,7 @@ public class SanPham implements Serializable {
         this.CongSuat = CongSuat;
         this.Pin = Pin;
         this.MoTa = MoTa;
-        this.MaTheLoai = MaTheLoai;
+        this.MatheLoai = MatheLoai;
         this.TrangThai = TrangThai;
     }
 
@@ -144,12 +133,12 @@ public class SanPham implements Serializable {
         this.MoTa = MoTa;
     }
 
-    public TheLoai getMaTheLoai() {
-        return MaTheLoai;
+    public TheLoai getMatheLoai() {
+        return MatheLoai;
     }
 
-    public void setMaTheLoai(TheLoai MaTheLoai) {
-        this.MaTheLoai = MaTheLoai;
+    public void setMatheLoai(TheLoai MatheLoai) {
+        this.MatheLoai = MatheLoai;
     }
 
     public int getTrangThai() {
@@ -160,5 +149,5 @@ public class SanPham implements Serializable {
         this.TrangThai = TrangThai;
     }
 
-    
+   
 }

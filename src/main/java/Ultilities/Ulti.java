@@ -4,7 +4,6 @@
  */
 package Ultilities;
 
-import jakarta.mail.internet.ParseException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,11 +12,11 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author Dell
+ * @author admin
  */
 public class Ulti {
-    
-  public boolean checkSoFloat(String text) {
+
+    public boolean checkSoFloat(String text) {
         Pattern pattern = Pattern.compile("\\d+");
         Matcher matcher = pattern.matcher(text.replace(".", ""));
         return matcher.matches();
