@@ -41,7 +41,7 @@ public class QuenMatKhauJFrame extends javax.swing.JFrame {
         String pass = nvForm.passNhanVien(user, email);
         if (pass.equals("Rỗng")) {
 
-            return "Sai tài khoản hoặc email đăng kí!!";
+            return "Gửi mail thành công, vui lòng đăng nhập vào email để lấy lại tài khoản và mật khẩu";
         }
          String fromEmail = "longhtph18991@fpt.edu.vn";
         // Mat khai email cua ban

@@ -26,6 +26,10 @@ public class TheLoaiSanPhamService {
     public List<TheLoaiSanPham> listTheLoai() {
         return tlDAO.listTheLoai();
     }
+    
+        public List<TheLoaiSanPham> listTheLoaiAll() {
+        return tlDAO.listTheLoaiAll();
+    }
 
     public String voHieuHoaTheLoai(TheLoaiSanPhamView tl1) {
         TheLoaiSanPham tl = new TheLoaiSanPham(tl1.getMaTheLoai(), tl1.getTenTheLoai(), tl1.getTrangThai());

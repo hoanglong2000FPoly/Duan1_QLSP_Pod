@@ -5,9 +5,11 @@
 package DomainModels;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,8 @@ public class TheLoaiSanPham implements Serializable{
     private String TenTheLoai;
     @Column
     private int TrangThai;
+    
+   
 
     public TheLoaiSanPham(String MaTheLoai, String TenTheLoai, int TrangThai) {
         this.MaTheLoai = MaTheLoai;

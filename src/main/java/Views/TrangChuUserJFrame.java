@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Views.SanPhamPannel;
 import javax.swing.plaf.PanelUI;
+import Views.BaoHanhJPN;
 
 /**
  *
@@ -58,6 +59,11 @@ private String user;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
@@ -103,6 +109,11 @@ private String user;
         });
 
         btnBaoHanh.setText("Bảo hành");
+        btnBaoHanh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBaoHanhMouseClicked(evt);
+            }
+        });
 
         btnDangXuat.setText("Đăng xuất");
         btnDangXuat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,6 +123,11 @@ private String user;
         });
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/khachhang.png"))); // NOI18N
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/hoadon.png"))); // NOI18N
 
@@ -124,7 +140,7 @@ private String user;
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/baohanh2.png"))); // NOI18N
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/dãnguat.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/dangxuat.png"))); // NOI18N
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel21MouseClicked(evt);
@@ -144,7 +160,8 @@ private String user;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jpn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
@@ -160,7 +177,7 @@ private String user;
                                 .addComponent(jLabel5)
                                 .addGap(146, 146, 146)
                                 .addComponent(jLabel15)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
@@ -185,12 +202,11 @@ private String user;
                                 .addComponent(btnBaoHanh, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(135, 135, 135)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel21)))
-                        .addGap(120, 120, 120))
-                    .addComponent(jpn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(120, 120, 120))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,9 +231,9 @@ private String user;
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel17)
                         .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel16))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -278,6 +294,18 @@ private String user;
     private void btnTheLoaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTheLoaiMouseClicked
       showPannel(new TheLoaiSanPhamUserPannel(user));
     }//GEN-LAST:event_btnTheLoaiMouseClicked
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+    
+    }//GEN-LAST:event_jPanel1MouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void btnBaoHanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBaoHanhMouseClicked
+           showPannel(new BaoHanhJPN(user));
+    }//GEN-LAST:event_btnBaoHanhMouseClicked
 
     public void showPannel(JPanel a) {
         jpn.removeAll();

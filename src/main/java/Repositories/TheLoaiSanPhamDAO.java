@@ -68,6 +68,16 @@ public class TheLoaiSanPhamDAO {
         }
         return list;
     }
+    
+        public List<TheLoaiSanPham> listTheLoaiAll() {
+        List<TheLoaiSanPham> list;
+        try ( Session ss = HibernateUltis.getSessionFactory().openSession()) {
+            String sql = " from TheLoaiSanPham";
+            TypedQuery<TheLoaiSanPham> qr = ss.createQuery(sql, TheLoaiSanPham.class);
+            list = qr.getResultList();
+        }
+        return list;
+    }
 
     public String tenTheLoai(String matheloai) {
         String name;
