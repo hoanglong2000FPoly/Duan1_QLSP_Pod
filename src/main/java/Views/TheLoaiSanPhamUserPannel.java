@@ -245,12 +245,20 @@ public class TheLoaiSanPhamUserPannel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+           if (txtMaTheLoai.getText().isBlank() || txtTenTheLoai.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đủ dữ liệu");
+            return;
+        }
         lichUp2();
         JOptionPane.showMessageDialog(this, tl.suaTheLoai(guiData()));
         loadTable(listTheLoai());
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnVoHieuHoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoHieuHoaActionPerformed
+          if (txtMaTheLoai.getText().isBlank() || txtTenTheLoai.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập mã để vô hiệu hóa");
+            return;
+        }
         JOptionPane.showMessageDialog(this, tl.voHieuHoaTheLoai(new TheLoaiSanPhamView(txtMaTheLoai.getText(), txtTenTheLoai.getText(), 1)));
         loadTable(listTheLoai());
         lichSuVoHieuHoa();

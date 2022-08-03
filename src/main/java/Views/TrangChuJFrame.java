@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Views.SanPhamPannel;
 import javax.swing.plaf.PanelUI;
+import Views.BaoHanhJPN;
 
 /**
  *
@@ -64,6 +65,11 @@ private String user;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
@@ -102,6 +108,11 @@ private String user;
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/nhanvien.png"))); // NOI18N
 
         btnKhachHang.setText("Khách hàng");
+        btnKhachHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnKhachHangMouseClicked(evt);
+            }
+        });
 
         btnHoaDon.setText("Hóa đơn");
 
@@ -113,6 +124,11 @@ private String user;
         });
 
         btnBaoHanh.setText("Bảo hành");
+        btnBaoHanh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBaoHanhMouseClicked(evt);
+            }
+        });
 
         btnDoanhThu.setText("Doanh Thu");
 
@@ -142,17 +158,22 @@ private String user;
         });
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/baohanh2.png"))); // NOI18N
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+        });
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/doanhthu.png"))); // NOI18N
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/líchu.png"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/lichsu.png"))); // NOI18N
         jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel20MouseClicked(evt);
             }
         });
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/dãnguat.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/dangnhap1.png"))); // NOI18N
         jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel21MouseClicked(evt);
@@ -173,7 +194,7 @@ private String user;
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 163, Short.MAX_VALUE)
+                        .addGap(0, 316, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnSanPham)
@@ -279,7 +300,7 @@ private String user;
                     .addComponent(btnLichSu)
                     .addComponent(btnDangXuat))
                 .addGap(18, 18, 18)
-                .addComponent(jpn, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                .addComponent(jpn, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -314,11 +335,11 @@ private String user;
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void btnPhuKienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPhuKienMouseClicked
-        
+        showPannel(new PhuKienPannel(user));
     }//GEN-LAST:event_btnPhuKienMouseClicked
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
-        
+        showPannel(new PhuKienPannel(user));
     }//GEN-LAST:event_jLabel17MouseClicked
 
     private void btnLichSuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLichSuMouseClicked
@@ -336,6 +357,22 @@ private String user;
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         showPannel(new TheLoaiSanPhamPannel(user));
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+       
+    }//GEN-LAST:event_jPanel1MouseClicked
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void btnBaoHanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBaoHanhMouseClicked
+         showPannel(new BaoHanhJPN(user));
+    }//GEN-LAST:event_btnBaoHanhMouseClicked
+
+    private void btnKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKhachHangMouseClicked
+        showPannel(new KhachHangJPN(user));
+    }//GEN-LAST:event_btnKhachHangMouseClicked
 
     public void showPannel(JPanel a) {
         jpn.removeAll();
